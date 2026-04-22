@@ -6,10 +6,10 @@ import { toast } from "sonner";
 import { SectionHeading } from "./ProjectsTimeline";
 
 const socials = [
-  { icon: GithubIcon, label: "GitHub", href: "https://github.com" },
-  { icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/LuisMarksman" },
+  { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/parth-gupta-082048253/" },
   { icon: TwitterIcon, label: "Twitter / X", href: "https://twitter.com" },
-  { icon: InstagramIcon, label: "Instagram", href: "https://instagram.com" },
+  { icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/parth_gupta___/" },
 ];
 
 export const Contact = () => {
@@ -51,8 +51,8 @@ export const Contact = () => {
                   Email
                 </div>
               </div>
-              <a href="mailto:parth@example.com" className="font-display text-lg hover:text-gradient transition">
-                parth@example.com
+              <a href="mailto:parthofficialacc@gmail.com" className="font-display text-lg hover:text-gradient transition">
+                parthofficialacc@gmail.com
               </a>
             </div>
 
@@ -112,7 +112,7 @@ export const Contact = () => {
                   type="email"
                   name="email"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[hsl(var(--grad-2)/0.6)] focus:ring-2 focus:ring-[hsl(var(--grad-2)/0.2)] transition"
-                  placeholder="you@domain.com"
+                  placeholder="you@mail.com"
                 />
               </Field>
             </div>
@@ -122,7 +122,7 @@ export const Contact = () => {
                 name="message"
                 rows={6}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[hsl(var(--grad-2)/0.6)] focus:ring-2 focus:ring-[hsl(var(--grad-2)/0.2)] transition resize-none"
-                placeholder="Tell me about your project, idea, or question…"
+                placeholder=""
               />
             </Field>
             <button
