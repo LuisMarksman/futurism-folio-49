@@ -166,18 +166,20 @@ function ExpandedDetail({
       </button>
 
       <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
-        <div className="lg:col-span-2">
-          <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)]">
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              width={1280}
-              height={720}
-              className="w-full h-auto object-cover aspect-video"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none" />
-          </div>
+        <div className="lg:col-span-2 space-y-4">
+          {(project.images && project.images.length > 0 ? project.images : [project.image]).map((src, idx) => (
+            <div
+              key={src + idx}
+              className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)] bg-black/40"
+            >
+              <img
+                src={src}
+                alt={`${project.title} ${idx + 1}`}
+                loading="lazy"
+                className="w-full h-auto max-h-[420px] object-contain"
+              />
+            </div>
+          ))}
         </div>
 
         <div className="lg:col-span-3 space-y-5">
