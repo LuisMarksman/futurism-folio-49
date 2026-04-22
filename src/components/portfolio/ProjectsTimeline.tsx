@@ -117,8 +117,13 @@ function ProjectCard({
         isOpen ? "ring-1 ring-[hsl(var(--grad-2)/0.5)] shadow-[0_0_40px_hsl(var(--grad-2)/0.25)]" : ""
       }`}
     >
-      <div className={`flex items-center gap-3 mb-3 ${align === "right" ? "md:justify-end" : ""}`}>
+      <div className={`flex items-baseline gap-3 mb-3 ${align === "right" ? "md:justify-end" : ""}`}>
         <span className="font-display text-3xl font-bold text-gradient">{project.year}</span>
+        {project.month && (
+          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            {project.month}
+          </span>
+        )}
         <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
       <h3 className="font-display text-xl sm:text-2xl font-semibold text-foreground">
