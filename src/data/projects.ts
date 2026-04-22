@@ -8,6 +8,7 @@ export type Project = {
   problem: string;
   tech: string[];
   image: string;
+  images?: string[];
   github?: string;
 };
 
@@ -136,6 +137,7 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino Nano", "Embedded C", "Ultrasonic Sensor", "L298N"],
     image: "/images/vacuum-cleaner-2019.jpg",
+    images: ["/images/vacuum-cleaner-2019.jpg", "/images/vacuum-cleaner-2019-2.jpg"],
   },
   {
     id: "p8",
@@ -153,6 +155,7 @@ export const projects: Project[] = [
     ],
     tech: ["Arduino UNO", "Processing", "HC-SR04", "Servo"],
     image: "/images/radar-2018.jpg",
+    images: ["/images/radar-2018.jpg", "/images/radar-2018-2.jpg"],
   },
   {
     id: "p9",
