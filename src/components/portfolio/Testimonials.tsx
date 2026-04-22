@@ -11,8 +11,8 @@ const testimonials = [
     text: "Parth has a rare blend of firmware depth and ML intuition. He shipped our predictive maintenance platform faster than any vendor we'd worked with — and it's still running flawlessly two years on.",
   },
   {
-    name: "Dr. Rohan Mehta",
-    role: "Professor, IIT Robotics Lab",
+    name: "Archit Nigam",
+    role: "Founder ",
     avatar: "https://i.pravatar.cc/120?img=12",
     text: "One of the most curious and rigorous engineers I've mentored. His swarm coordination work pushed the boundary of what we thought possible on edge hardware.",
   },
@@ -21,12 +21,6 @@ const testimonials = [
     role: "Founder, AgriPulse",
     avatar: "https://i.pravatar.cc/120?img=32",
     text: "He took a vague idea about smart farming and turned it into a production-grade LoRa network running on solar nodes. End-to-end ownership — hardware, firmware, app.",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Lead Engineer, Quantum Robotics",
-    avatar: "https://i.pravatar.cc/120?img=68",
-    text: "Parth's code reviews make our entire team better. He's the engineer you want when the problem spans firmware, networking, and machine learning all at once.",
   },
 ];
 
@@ -41,7 +35,11 @@ export const Testimonials = () => {
       <div className="container">
         <SectionHeading
           eyebrow="Testimonials"
-          title={<>What people <span className="text-gradient">say</span></>}
+          title={
+            <>
+              What people <span className="text-gradient">say</span>
+            </>
+          }
         />
 
         <div className="mt-16 max-w-3xl mx-auto">
@@ -56,9 +54,7 @@ export const Testimonials = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
               >
-                <p className="font-display text-lg sm:text-2xl text-foreground/90 leading-relaxed">
-                  "{t.text}"
-                </p>
+                <p className="font-display text-lg sm:text-2xl text-foreground/90 leading-relaxed">"{t.text}"</p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="relative">
                     <div className="absolute -inset-1 rounded-full bg-gradient-brand blur-md opacity-60" />
