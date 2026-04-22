@@ -1,6 +1,8 @@
 export type Project = {
   id: string;
   year: number;
+  month?: string; // e.g. "April"
+  monthNum?: number; // 1-12, used for sorting
   title: string;
   shortDesc: string;
   description: string;
@@ -15,30 +17,12 @@ export type Project = {
   partOf?: string;
 };
 
-export const projects: Project[] = [
-  {
-    id: "p1",
-    year: 2026,
-    title: "Robo Eye — Vector Subsystem",
-    shortDesc: "Animated robotic eye module — part of the Vector project.",
-    description:
-      "An expressive animated robotic eye built as a perception/personality subsystem of Vector — a larger humanoid-style companion robot currently in development. The eye renders smooth emotive animations on a round display and will eventually be paired with vision and voice modules.",
-    problem: "Vector needs a face that can express state, attention and emotion in a believable, low-latency way.",
-    features: [
-      "Smooth emotive eye animations on round display",
-      "Modular driver designed to plug into Vector's main controller",
-      "Low-latency rendering on embedded MCU",
-      "Designed for future gaze + attention tracking",
-    ],
-    tech: ["Embedded C", "GC9A01 Display", "ESP32", "LVGL"],
-    image: "/images/tesla-coil-2025.jpg",
-    videos: ["/videos/robo-eye-2026.mp4"],
-    inProgress: true,
-    partOf: "Vector",
-  },
+const raw: Project[] = [
   {
     id: "p2",
     year: 2026,
+    month: "April",
+    monthNum: 4,
     title: "Robotic Arm — Vector Subsystem",
     shortDesc: "Articulated robotic arm — part of the Vector project.",
     description:
@@ -57,8 +41,52 @@ export const projects: Project[] = [
     partOf: "Vector",
   },
   {
+    id: "p1",
+    year: 2026,
+    month: "March",
+    monthNum: 3,
+    title: "Robo Eye — Vector Subsystem",
+    shortDesc: "Animated robotic eye module — part of the Vector project.",
+    description:
+      "An expressive animated robotic eye built as a perception/personality subsystem of Vector — a larger humanoid-style companion robot currently in development. The eye renders smooth emotive animations on a round display and will eventually be paired with vision and voice modules.",
+    problem: "Vector needs a face that can express state, attention and emotion in a believable, low-latency way.",
+    features: [
+      "Smooth emotive eye animations on round display",
+      "Modular driver designed to plug into Vector's main controller",
+      "Low-latency rendering on embedded MCU",
+      "Designed for future gaze + attention tracking",
+    ],
+    tech: ["Embedded C", "GC9A01 Display", "ESP32", "LVGL"],
+    image: "/images/tesla-coil-2025.jpg",
+    videos: ["/videos/robo-eye-2026.mp4"],
+    inProgress: true,
+    partOf: "Vector",
+  },
+  {
+    id: "p4",
+    year: 2025,
+    month: "April",
+    monthNum: 4,
+    title: "Line Following Car (V1 & V2)",
+    shortDesc: "Two generations of line-following robots — DIY to high-speed racer.",
+    description:
+      "A two-version line follower project built in April 2025. V1 is an Arduino UNO based learning build with IR sensors, L298N motor driver and 18650 cells on a hand-cut chassis. V2 is a high-speed racing rebuild with an STM32, an 8-IR sensor array and N20 micro gearmotors on a custom perfboard for fast PID line tracking.",
+    problem: "Iterate from a basic educational line follower to a competition-grade high-speed racing platform.",
+    features: [
+      "V1: Arduino UNO + IR sensors + L298N driver",
+      "V1: 18650 powered, hand-built chassis",
+      "V2: STM32 controller with 8-IR sensor array",
+      "V2: N20 gearmotors + LiPo, tuned for high-speed PID racing",
+    ],
+    tech: ["Arduino UNO", "STM32", "Embedded C", "PID", "N20 Motors", "8x IR Array"],
+    image: "/images/line-follower-v2-2025.jpg",
+    images: ["/images/line-follower-v1-2025.jpg", "/images/line-follower-v2-2025.jpg"],
+  },
+  {
     id: "p3",
     year: 2025,
+    month: "March",
+    monthNum: 3,
     title: "18-inch Tesla Coil",
     shortDesc: "High-voltage solid-state Tesla coil build (March 2025).",
     description:
@@ -72,24 +100,6 @@ export const projects: Project[] = [
     ],
     tech: ["High-Voltage", "Resonant Circuits", "Analog Electronics", "RF Tuning"],
     image: "/images/tesla-coil-2025.jpg",
-  },
-  {
-    id: "p4",
-    year: 2025,
-    title: "Line Following Car (V1 & V2)",
-    shortDesc: "Two generations of line-following robots — DIY to high-speed racer.",
-    description:
-      "A two-version line follower project. V1 is an Arduino UNO based learning build with IR sensors, L298N motor driver and 18650 cells on a hand-cut chassis. V2 is a high-speed racing rebuild with an STM32, an 8-IR sensor array and N20 micro gearmotors on a custom perfboard for fast PID line tracking.",
-    problem: "Iterate from a basic educational line follower to a competition-grade high-speed racing platform.",
-    features: [
-      "V1: Arduino UNO + IR sensors + L298N driver",
-      "V1: 18650 powered, hand-built chassis",
-      "V2: STM32 controller with 8-IR sensor array",
-      "V2: N20 gearmotors + LiPo, tuned for high-speed PID racing",
-    ],
-    tech: ["Arduino UNO", "STM32", "Embedded C", "PID", "N20 Motors", "8x IR Array"],
-    image: "/images/line-follower-v2-2025.jpg",
-    images: ["/images/line-follower-v1-2025.jpg", "/images/line-follower-v2-2025.jpg"],
   },
   {
     id: "p7",
@@ -162,3 +172,9 @@ export const projects: Project[] = [
     image: "/images/ultrasonic-belt-2017.jpg",
   },
 ];
+
+// Newest first by (year, monthNum)
+export const projects: Project[] = [...raw].sort((a, b) => {
+  if (b.year !== a.year) return b.year - a.year;
+  return (b.monthNum ?? 0) - (a.monthNum ?? 0);
+});
