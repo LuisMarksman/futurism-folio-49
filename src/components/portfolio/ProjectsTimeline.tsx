@@ -123,7 +123,18 @@ function ProjectCard({
       </div>
       <h3 className="font-display text-xl sm:text-2xl font-semibold text-foreground">
         {project.title}
+        {project.inProgress && (
+          <span className="ml-2 align-middle inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider rounded-full px-2 py-0.5 bg-gradient-brand-soft border border-[hsl(var(--grad-2)/0.4)] text-foreground">
+            <span className="size-1.5 rounded-full bg-gradient-brand animate-glow-pulse" />
+            In Progress
+          </span>
+        )}
       </h3>
+      {project.partOf && (
+        <p className={`mt-1 text-xs text-gradient font-semibold ${align === "right" ? "md:text-right" : ""}`}>
+          Part of: {project.partOf}
+        </p>
+      )}
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{project.shortDesc}</p>
       <div className={`mt-4 flex flex-wrap gap-2 ${align === "right" ? "md:justify-end" : ""}`}>
         {project.tech.slice(0, 4).map((t) => (
@@ -167,7 +178,27 @@ function ExpandedDetail({
 
       <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
         <div className="lg:col-span-2 space-y-4">
-          {(project.images && project.images.length > 0 ? project.images : [project.image]).map((src, idx) => (
+          {(project.videos ?? []).map((src, idx) => (
+            <div
+              key={"vid-" + src + idx}
+              className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)] bg-black/40"
+            >
+              <video
+                src={src}
+                controls
+                playsInline
+                loop
+                muted
+                className="w-full h-auto max-h-[420px] object-contain"
+              />
+            </div>
+          ))}
+          {(project.images && project.images.length > 0
+            ? project.images
+            : project.videos && project.videos.length > 0
+            ? []
+            : [project.image]
+          ).map((src, idx) => (
             <div
               key={src + idx}
               className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)] bg-black/40"
