@@ -220,7 +220,9 @@ function ExpandedDetail({
 
         <div className="lg:col-span-3 space-y-5">
           <div>
-            <span className="font-display text-sm text-gradient font-semibold">{project.year}</span>
+            <span className="font-display text-sm text-gradient font-semibold">
+              {project.month ? `${project.month} ${project.year}` : project.year}
+            </span>
             <h4 className="font-display text-2xl sm:text-3xl font-bold mt-1">{project.title}</h4>
           </div>
 
