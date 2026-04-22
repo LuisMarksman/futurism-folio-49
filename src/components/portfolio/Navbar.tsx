@@ -52,8 +52,8 @@ export const Navbar = () => {
           )}
         >
           <a href="#home" className="font-display text-xl font-bold tracking-tight">
-            <span className="text-gradient">Parth</span>
-            <span className="text-foreground">.dev</span>
+            <span className="text-gradient">Parthbuilds</span>
+            <span className="text-foreground">.tech</span>
           </a>
 
           <ul className="hidden lg:flex items-center gap-1">
