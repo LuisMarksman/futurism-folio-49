@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Github, X, Sparkles } from "lucide-react";
+import { X, Sparkles } from "lucide-react";
+import { GithubIcon } from "./BrandIcons";
 import { projects } from "@/data/projects";
 
 export const ProjectsTimeline = () => {

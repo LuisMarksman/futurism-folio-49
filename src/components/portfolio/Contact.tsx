@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from "./BrandIcons";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { SectionHeading } from "./ProjectsTimeline";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com" },
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com" },
+  { icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: TwitterIcon, label: "Twitter / X", href: "https://twitter.com" },
+  { icon: InstagramIcon, label: "Instagram", href: "https://instagram.com" },
 ];
 
 export const Contact = () => {
