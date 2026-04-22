@@ -233,7 +233,7 @@ function ExpandedDetail({
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_hsl(var(--grad-2)/0.4)] hover:shadow-[0_0_36px_hsl(var(--grad-2)/0.6)] transition-shadow"
               >
-                <Github className="size-4" />
+                <GithubIcon className="size-4" />
                 View GitHub Repo
               </a>
             </div>
