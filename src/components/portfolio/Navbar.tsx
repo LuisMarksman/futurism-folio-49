@@ -56,13 +56,13 @@ export const Navbar = () => {
             <span className="text-foreground">.tech</span>
           </a>
 
-          <ul className="hidden lg:flex items-center gap-1">
+          <ul className="hidden md:flex items-center gap-1">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                    "relative px-3 py-2 text-xs lg:text-sm font-medium rounded-lg transition-colors",
                     active === l.href.slice(1)
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -79,13 +79,13 @@ export const Navbar = () => {
 
           <a
             href="#contact"
-            className="hidden lg:inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_hsl(var(--grad-2)/0.4)] hover:shadow-[0_0_36px_hsl(var(--grad-2)/0.6)] transition-shadow"
+            className="hidden md:inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-8 py-2.5 text-sm font-semibold tracking-wide text-primary-foreground shadow-[0_0_24px_hsl(var(--grad-2)/0.4)] hover:shadow-[0_0_36px_hsl(var(--grad-2)/0.6)] transition-shadow"
           >
             Let's talk
           </a>
 
           <button
-            className="lg:hidden text-foreground p-2"
+            className="md:hidden text-foreground p-2"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -94,7 +94,7 @@ export const Navbar = () => {
         </nav>
 
         {open && (
-          <div className="lg:hidden mt-2 glass-strong rounded-2xl p-4 animate-fade-in">
+          <div className="md:hidden mt-2 glass-strong rounded-2xl p-4 animate-fade-in">
             <ul className="flex flex-col gap-1">
               {links.map((l) => (
                 <li key={l.href}>
