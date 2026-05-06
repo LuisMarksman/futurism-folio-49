@@ -119,16 +119,15 @@ export const Hero = () => {
               <Download className="size-4" /> Resume
             </a>
           </motion.div>
-
         </div>
       </div>
 
-      {/* Floating tech chips - full bleed */}
+      {/* Floating tech chips - full width inside section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="relative z-10 mt-16 w-screen left-1/2 -translate-x-1/2 h-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
+        className="relative z-10 mt-16 w-full h-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
       >
         <div className="flex gap-3 animate-scroll-x w-max">
           {[...techIcons, ...techIcons].map((t, i) => (
