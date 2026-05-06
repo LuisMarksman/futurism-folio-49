@@ -120,28 +120,29 @@ export const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Floating tech chips */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="mt-16 relative h-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]"
-          >
-            <div className="flex gap-3 animate-scroll-x w-max">
-              {[...techIcons, ...techIcons].map((t, i) => (
-                <div
-                  key={i}
-                  className="glass rounded-full px-5 py-2.5 text-sm font-medium whitespace-nowrap"
-                >
-                  <span className={`bg-gradient-to-r ${t.color} bg-clip-text text-transparent font-semibold`}>
-                    {t.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
+
+      {/* Floating tech chips - full bleed */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8 }}
+        className="relative z-10 mt-16 w-screen left-1/2 -translate-x-1/2 h-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
+      >
+        <div className="flex gap-3 animate-scroll-x w-max">
+          {[...techIcons, ...techIcons].map((t, i) => (
+            <div
+              key={i}
+              className="glass rounded-full px-5 py-2.5 text-sm font-medium whitespace-nowrap"
+            >
+              <span className={`bg-gradient-to-r ${t.color} bg-clip-text text-transparent font-semibold`}>
+                {t.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };
