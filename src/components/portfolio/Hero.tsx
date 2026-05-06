@@ -100,17 +100,17 @@ export const Hero = () => {
             className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
           >
             <a
-              href="#projects"
+              href="#contact"
               className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_hsl(var(--grad-2)/0.5)] hover:shadow-[0_0_45px_hsl(var(--grad-2)/0.7)] transition-all hover:-translate-y-0.5"
             >
-              View Projects
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              Contact Me
+              <Mail className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contact"
+              href="#projects"
               className="inline-flex items-center gap-2 rounded-xl glass-strong px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-white/10 transition-colors"
             >
-              <Mail className="size-4" /> Contact Me
+              <ArrowRight className="size-4" /> View Projects
             </a>
             <a
               href="#"
