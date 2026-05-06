@@ -27,7 +27,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 pb-32 overflow-hidden"
     >
       <ParticlesBg />
       <div className="absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
@@ -122,12 +122,12 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Floating tech chips - full width inside section */}
+      {/* Floating tech chips - pinned to bottom, full width inside section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="relative z-10 mt-16 w-full h-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]"
+        className="absolute bottom-8 left-0 right-0 z-10 w-full h-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]"
       >
         <div className="flex gap-3 animate-scroll-x w-max">
           {[...techIcons, ...techIcons].map((t, i) => (

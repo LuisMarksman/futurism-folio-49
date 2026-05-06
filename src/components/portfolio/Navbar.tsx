@@ -56,13 +56,13 @@ export const Navbar = () => {
             <span className="text-foreground">.tech</span>
           </a>
 
-          <ul className="hidden md:flex items-center gap-1">
+          <ul className="hidden md:flex items-center gap-2">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   className={cn(
-                    "relative px-3 py-2 text-xs lg:text-sm font-medium rounded-lg transition-colors",
+                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                     active === l.href.slice(1)
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
