@@ -1,14 +1,18 @@
-import { motion } from "framer-motion";
-import { Trophy, Medal, Award, FlaskConical } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Trophy, Medal, Award, FlaskConical, X } from "lucide-react";
 import { SectionHeading } from "./ProjectsTimeline";
 
-const achievements: {
+type Achievement = {
   icon: typeof Trophy;
   title: string;
   desc: string;
   year: string;
   link?: string;
-}[] = [
+  images?: string[];
+};
+
+const achievements: Achievement[] = [
   {
     icon: Trophy,
     title: "Top 10 Finalist — Hackaday National Hackathon",
@@ -28,16 +32,20 @@ const achievements: {
     title: "District Science Project Competition — Winner",
     desc: "Won the district-level competition for the Automatic Vacuum Cleaner Robot — an innovative science & engineering project.",
     year: "2019",
+    images: ["/images/vacuum-cleaner-2019.jpg", "/images/vacuum-cleaner-2019-2.jpg"],
   },
   {
     icon: Award,
     title: "District Science Project Competition — Winner",
     desc: "Won the district-level competition for the Ultrasonic Radar System — an innovative science & engineering project.",
     year: "2018",
+    images: ["/images/radar-2018.jpg", "/images/radar-2018-2.jpg"],
   },
 ];
 
 export const Achievements = () => {
+  const [gallery, setGallery] = useState<{ title: string; images: string[] } | null>(null);
+
   return (
     <section id="achievements" className="relative py-24 sm:py-32">
       <div className="container">
@@ -78,10 +86,54 @@ export const Achievements = () => {
                   View event →
                 </a>
               )}
+              {a.images && (
+                <button
+                  onClick={() => setGallery({ title: `${a.title} (${a.year})`, images: a.images! })}
+                  className="mt-4 inline-block text-sm text-gradient font-medium hover:underline"
+                >
+                  View event →
+                </button>
+              )}
             </motion.div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {gallery && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md grid place-items-center p-4"
+            onClick={() => setGallery(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative glass-strong rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <button
+                onClick={() => setGallery(null)}
+                aria-label="Close"
+                className="absolute top-4 right-4 size-9 rounded-full bg-white/5 border border-white/10 grid place-items-center hover:bg-white/10 transition"
+              >
+                <X className="size-4" />
+              </button>
+              <h3 className="font-display text-xl font-semibold mb-5 pr-10">{gallery.title}</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {gallery.images.map((src) => (
+                  <div key={src} className="rounded-xl overflow-hidden bg-black/40 border border-white/10">
+                    <img src={src} alt={gallery.title} className="w-full h-auto object-contain" />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
