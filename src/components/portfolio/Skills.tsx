@@ -1,43 +1,61 @@
 import { motion } from "framer-motion";
-import { Cpu, Brain, Radio, CircuitBoard, Hammer, Terminal } from "lucide-react";
+import { Code2, Cpu, Bot, Brain, CircuitBoard, Hammer, Factory, Terminal, Sparkles } from "lucide-react";
 import { SectionHeading } from "./ProjectsTimeline";
 
 const groups = [
   {
+    icon: Code2,
+    title: "Programming",
+    description: "Writing performant code across embedded, application, and industrial domains.",
+    skills: ["Embedded C", "Python", "Java", "FANUC CNC Programming"],
+  },
+  {
     icon: Cpu,
-    title: "Embedded Systems & Robotics",
-    description: "Building real-world robotic and embedded solutions from firmware to hardware integration.",
-    skills: ["Embedded C", "STM32", "ESP32", "Arduino", "ESP8266", "Motor Control", "Encoders", "Sensors", "PWM", "I2C", "SPI", "UART", "ROS2"],
+    title: "Embedded Systems",
+    description: "Designing firmware and low-level systems on a wide range of microcontrollers.",
+    skills: ["STM32", "ESP32", "Arduino", "Raspberry Pi", "ATtiny", "ESP8266"],
+  },
+  {
+    icon: Bot,
+    title: "Robotics",
+    description: "Building intelligent robots — from motion control to full autonomous stacks.",
+    skills: ["ROS 2", "Gazebo", "Inverse Kinematics", "PID Control", "Robot Arms", "Mobile Robotics"],
   },
   {
     icon: Brain,
-    title: "AI / Machine Learning",
-    description: "Developing ML models, Edge AI systems, and practical AI tools for real applications.",
-    skills: ["Python", "PyTorch", "Machine Learning", "Deep Learning", "Edge AI", "Local ML Models", "Cloud ML Models", "AI Agents", "OpenCV", "Model Deployment"],
-  },
-  {
-    icon: Radio,
-    title: "IoT & Connected Systems",
-    description: "Connecting devices, sensors, and dashboards for real-time data flow and monitoring.",
-    skills: ["MQTT", "Cloud Integration", "Sensor Logging", "Google Sheets Automation", "Telemetry", "Remote Monitoring", "IoT Systems"],
+    title: "Computer Vision & AI",
+    description: "Deploying vision, edge AI, and LLM-powered agents for real-world tasks.",
+    skills: ["OpenCV", "Edge AI", "AI Agents", "LLM Integration"],
   },
   {
     icon: CircuitBoard,
-    title: "Hardware & Electronics",
-    description: "Designing, assembling, and debugging electronic systems and embedded prototypes.",
-    skills: ["Electronics", "Soldering", "PCB Design", "Debugging", "Microcontrollers", "Microprocessor Boards", "Raspberry Pi", "Jetson Nano"],
+    title: "Electronics",
+    description: "Prototyping and hand-assembling reliable hardware from schematic to solder.",
+    skills: ["PCB Prototyping", "Soldering", "Sensor Integration", "Embedded Hardware Design"],
   },
   {
     icon: Hammer,
-    title: "CAD / Fabrication / Mechanical",
-    description: "Designing and building physical systems with manufacturing and prototyping skills.",
-    skills: ["Fusion 360", "SolidEdge", "3D Printing", "CNC Programming", "Lathe Operation", "Woodworking"],
+    title: "Mechanical",
+    description: "Designing and fabricating mechanical parts and assemblies for robots and prototypes.",
+    skills: ["CAD", "3D Printing", "Mechanical Assembly", "Woodworking"],
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing & Fabrication",
+    description: "Hands-on experience with traditional machining and metal casting workflows.",
+    skills: ["Lathe Machine Operation", "Mold Making", "Furnace Operations"],
   },
   {
     icon: Terminal,
-    title: "Software & Development Tools",
-    description: "Comfortable working across software, systems, and deployment workflows.",
-    skills: ["Linux", "Git", "GitHub", "Deployment", "Vercel", "Render", "GitHub Pages", "GCP", "Cloudflare Tunnel"],
+    title: "Development Tools",
+    description: "Comfortable across the developer toolchain for embedded and systems work.",
+    skills: ["Ubuntu / Linux", "Git", "PlatformIO", "STM32CubeIDE", "Arduino IDE"],
+  },
+  {
+    icon: Sparkles,
+    title: "Currently Learning",
+    description: "Actively exploring the frontier of AI, agents, and on-device intelligence.",
+    skills: ["Physical AI", "Local LLMs", "LLM Deployment & Optimization", "Agentic AI"],
   },
 ];
 
