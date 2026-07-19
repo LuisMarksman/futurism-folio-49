@@ -2,39 +2,64 @@ import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./ProjectsTimeline";
 
-const experiences = [
+type Contribution = string | { text: string; link?: { url: string; label: string } };
+
+const experiences: {
+  company: string;
+  role: string;
+  duration: string;
+  contributions: Contribution[];
+  tech: string[];
+}[] = [
   {
-    company: "Quantum Robotics Labs",
-    role: "Robotics & AI Engineer",
-    duration: "2024 — Present",
+    company: "Embedded Systems Developer",
+    role: "Embedded Systems Developer (Startup)",
+    duration: "October 2025",
     contributions: [
-      "Lead engineer for autonomous swarm coordination platform",
-      "Deployed edge-AI inference pipelines on Jetson Orin clusters",
-      "Mentored 3 junior engineers across firmware & ML",
+      "Developed a portable Network Attached Storage (NAS) device using Raspberry Pi",
+      "Implemented wireless file sharing and storage functionality",
+      "Worked on hardware integration, Linux configuration, and networking",
     ],
-    tech: ["ROS2", "PyTorch", "Jetson", "Python", "C++"],
+    tech: ["Raspberry Pi", "Linux", "Networking", "Python"],
   },
   {
-    company: "EdgeSense IoT",
-    role: "Embedded Systems Engineer",
-    duration: "2022 — 2024",
+    company: "Arogya AI Smartwatch",
+    role: "Product Prototyping",
+    duration: "July 2025",
     contributions: [
-      "Designed low-power LoRa mesh nodes deployed across 12 sites",
-      "Built MQTT → InfluxDB telemetry stack handling 5M points/day",
-      "Reduced node BOM cost by 38% through PCB redesign",
+      "Prototyped the Arogya AI Smartwatch, a wearable concept focused on healthcare",
+      "Contributed to product design, hardware planning, and AI feature ideation",
+      {
+        text: "Participated in pitching the concept to Eli Lilly",
+        link: {
+          url: "https://www.linkedin.com/posts/lilly-india_wearelilly-activity-7350773663308079105-SyS0?utm_source=share&utm_medium=member_android&rcm=ACoAAD556mIBPRUoDJXJdc3MbSBXaVolyNHiRNs",
+          label: "(view event)",
+        },
+      },
     ],
-    tech: ["ESP32", "Embedded C", "LoRa", "MQTT", "KiCad"],
+    tech: ["Wearables", "Healthcare AI", "Product Design", "Prototyping"],
   },
   {
-    company: "RoboCore Automation",
-    role: "Robotics Intern → Engineer",
-    duration: "2020 — 2022",
+    company: "Python Instructor",
+    role: "Python Instructor",
+    duration: "February 2025",
     contributions: [
-      "Developed inverse kinematics solver for 6-DOF arm",
-      "Integrated computer vision pipeline for pick-and-place",
-      "Authored internal ROS package adopted across 4 teams",
+      "Taught Python programming to beginners",
+      "Created lesson plans and explained programming fundamentals",
+      "Mentored students through coding exercises and projects",
     ],
-    tech: ["ROS", "Python", "OpenCV", "STM32"],
+    tech: ["Python", "Teaching", "Mentorship"],
+  },
+  {
+    company: "AI News Verification System",
+    role: "AI/ML Developer",
+    duration: "December 2024",
+    contributions: [
+      "Developed an AI-powered news classification and verification system",
+      "Integrated machine learning with external APIs for news validation",
+      "Built an interactive interface for news analysis and fact checking",
+    ],
+    tech: ["Python", "Machine Learning", "APIs", "NLP"],
   },
 ];
 
@@ -78,13 +103,34 @@ export const Experience = () => {
                     </div>
                     <p className="text-gradient font-semibold mb-4">{e.company}</p>
                     <ul className="space-y-1.5 mb-4">
-                      {e.contributions.map((c) => (
-                        <li key={c} className="flex gap-2 text-sm text-foreground/85">
-                          <span className="mt-1.5 size-1 rounded-full bg-gradient-brand shrink-0" />
-                          {c}
-                        </li>
-                      ))}
+                      {e.contributions.map((c, ci) => {
+                        const isObj = typeof c !== "string";
+                        const text = isObj ? c.text : c;
+                        const link = isObj ? c.link : undefined;
+                        return (
+                          <li key={ci} className="flex gap-2 text-sm text-foreground/85">
+                            <span className="mt-1.5 size-1 rounded-full bg-gradient-brand shrink-0" />
+                            <span>
+                              {text}
+                              {link && (
+                                <>
+                                  {" "}
+                                  <a
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gradient font-medium hover:underline"
+                                  >
+                                    {link.label}
+                                  </a>
+                                </>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {e.tech.map((t) => (
                         <span
