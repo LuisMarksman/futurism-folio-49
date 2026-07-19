@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Archit Nigam",
     role: "Founder & Head of Product Development, Aeon Crafts",
-    avatar: "https://i.pravatar.cc/120?img=12",
+    avatar: "/images/archit-nigam.png",
     text: "Parth worked with us as a Hardware/Firmware Engineer for six months, taking a consumer tech device from prototype to MVP — a wireless storage solution built on deep MCU/SoC, BLE/WLAN and firmware expertise. He's reliable, detail-oriented and forever hungry to learn. I'm confident he'll add value to any team or project he joins.",
   },
   {
