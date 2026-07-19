@@ -1,50 +1,39 @@
 import { motion } from "framer-motion";
-import { Trophy, Medal, Star, Award, Rocket, Users } from "lucide-react";
+import { Trophy, Medal, Award, FlaskConical } from "lucide-react";
 import { SectionHeading } from "./ProjectsTimeline";
 
-const stats = [
-  { value: "20+", label: "Projects Shipped" },
-  { value: "5", label: "Hackathons Won" },
-  { value: "8+", label: "Happy Clients" },
-  { value: "3", label: "Patents Filed" },
-];
-
-const achievements = [
+const achievements: {
+  icon: typeof Trophy;
+  title: string;
+  desc: string;
+  year: string;
+  link?: string;
+}[] = [
   {
     icon: Trophy,
-    title: "Smart India Hackathon — Winner",
-    desc: "Built an autonomous disaster-response drone system; won national finals among 1,200+ teams.",
-    year: "2024",
+    title: "Top 10 Finalist — Hackaday National Hackathon",
+    desc: "Selected as a Top 10 Finalist at the national-level hackathon organized by Hackaday in Pondicherry.",
+    year: "2025",
+    link: "https://www.linkedin.com/posts/parth-gupta-082048253_hackday-hackdaypondy-innovation-ugcPost-7370452567857782784-zxIT/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD556mIBPRUoDJXJdc3MbSBXaVolyNHiRNs",
   },
   {
     icon: Medal,
-    title: "IEEE Robotics Symposium — Top 10",
-    desc: "Selected among top 10 papers for work on edge-deployed swarm coordination algorithms.",
-    year: "2023",
+    title: "Winner — StarPitch 2.0, SMVIT College",
+    desc: "Won StarPitch 2.0 at SMVIT College for presenting an innovative technology solution.",
+    year: "2025",
+    link: "https://www.linkedin.com/posts/parth-gupta-082048253_innovation-entrepreneurship-engineeringlife-ugcPost-7365448317293551616-Wdxu/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD556mIBPRUoDJXJdc3MbSBXaVolyNHiRNs",
+  },
+  {
+    icon: FlaskConical,
+    title: "District Science Project Competition — Winner",
+    desc: "Won the district-level competition for the Automatic Vacuum Cleaner Robot — an innovative science & engineering project.",
+    year: "2019",
   },
   {
     icon: Award,
-    title: "Best Embedded Project",
-    desc: "Awarded best embedded systems project for industrial predictive maintenance platform.",
-    year: "2023",
-  },
-  {
-    icon: Rocket,
-    title: "TechCrunch Disrupt Finalist",
-    desc: "Voice-controlled robotic arm featured in startup battlefield as a finalist.",
-    year: "2024",
-  },
-  {
-    icon: Star,
-    title: "Open Source Contributor",
-    desc: "Active contributor to ROS2 ecosystem with 4 merged packages and 1.2k+ stars combined.",
-    year: "2022",
-  },
-  {
-    icon: Users,
-    title: "Speaker — RoboConf India",
-    desc: "Delivered keynote on TinyML for low-power robotics to an audience of 800+ engineers.",
-    year: "2025",
+    title: "District Science Project Competition — Winner",
+    desc: "Won the district-level competition for the Ultrasonic Radar System — an innovative science & engineering project.",
+    year: "2018",
   },
 ];
 
@@ -58,32 +47,10 @@ export const Achievements = () => {
           subtitle="Moments that pushed the work — and the craft — forward."
         />
 
-        {/* Stats */}
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="glass rounded-2xl p-5 text-center"
-            >
-              <div className="font-display text-3xl sm:text-4xl font-bold text-gradient">
-                {s.value}
-              </div>
-              <div className="mt-1 text-xs sm:text-sm text-muted-foreground font-medium">
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Achievement cards */}
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-14 grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {achievements.map((a, i) => (
             <motion.div
-              key={a.title}
+              key={a.title + a.year}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -101,6 +68,16 @@ export const Achievements = () => {
               </div>
               <h3 className="font-display text-lg font-semibold mb-2">{a.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
+              {a.link && (
+                <a
+                  href={a.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-sm text-gradient font-medium hover:underline"
+                >
+                  View event →
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
