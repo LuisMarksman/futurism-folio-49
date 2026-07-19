@@ -103,13 +103,34 @@ export const Experience = () => {
                     </div>
                     <p className="text-gradient font-semibold mb-4">{e.company}</p>
                     <ul className="space-y-1.5 mb-4">
-                      {e.contributions.map((c) => (
-                        <li key={c} className="flex gap-2 text-sm text-foreground/85">
-                          <span className="mt-1.5 size-1 rounded-full bg-gradient-brand shrink-0" />
-                          {c}
-                        </li>
-                      ))}
+                      {e.contributions.map((c, ci) => {
+                        const isObj = typeof c !== "string";
+                        const text = isObj ? c.text : c;
+                        const link = isObj ? c.link : undefined;
+                        return (
+                          <li key={ci} className="flex gap-2 text-sm text-foreground/85">
+                            <span className="mt-1.5 size-1 rounded-full bg-gradient-brand shrink-0" />
+                            <span>
+                              {text}
+                              {link && (
+                                <>
+                                  {" "}
+                                  <a
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gradient font-medium hover:underline"
+                                  >
+                                    {link.label}
+                                  </a>
+                                </>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {e.tech.map((t) => (
                         <span
