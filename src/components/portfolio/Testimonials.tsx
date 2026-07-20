@@ -5,22 +5,16 @@ import { SectionHeading } from "./ProjectsTimeline";
 
 const testimonials = [
   {
-    name: "Ananya Kapoor",
-    role: "CTO, EdgeSense IoT",
-    avatar: "https://i.pravatar.cc/120?img=47",
-    text: "Parth has a rare blend of firmware depth and ML intuition. He shipped our predictive maintenance platform faster than any vendor we'd worked with — and it's still running flawlessly two years on.",
-  },
-  {
     name: "Archit Nigam",
     role: "Founder & Head of Product Development, Aeon Crafts",
     avatar: "/images/archit-nigam.png",
     text: "Parth worked with us as a Hardware/Firmware Engineer for six months, taking a consumer tech device from prototype to MVP — a wireless storage solution built on deep MCU/SoC, BLE/WLAN and firmware expertise. He's reliable, detail-oriented and forever hungry to learn. I'm confident he'll add value to any team or project he joins.",
   },
   {
-    name: "Sara Lin",
-    role: "Founder, AgriPulse",
-    avatar: "https://i.pravatar.cc/120?img=32",
-    text: "He took a vague idea about smart farming and turned it into a production-grade LoRa network running on solar nodes. End-to-end ownership — hardware, firmware, app.",
+    name: "Vikas Vishwakarma",
+    role: "Founder & CEO, Zivika Labs Pvt Ltd",
+    avatar: "/images/vikas_visvakarma.png",
+    text: "Working with Parth on our AI wearable that acts like a personal doctor was genuinely a great experience — one 'quick discussion' famously turned into a walk across almost the entire college campus. He's super energetic, creative, hardworking, and always passionate about building meaningful solutions. Excited to see all the amazing things he builds in the future.",
   },
 ];
 
