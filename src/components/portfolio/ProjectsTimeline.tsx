@@ -183,21 +183,31 @@ function ExpandedDetail({
 
       <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
         <div className="lg:col-span-2 space-y-4">
-          {(project.embeds ?? []).map((src, idx) => (
-            <div
-              key={"embed-" + src + idx}
-              className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)] bg-black/40"
-            >
-              <iframe
-                src={src}
-                title={`${project.title} demo ${idx + 1}`}
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
-          ))}
+          {(project.embeds ?? []).map((src, idx) => {
+            const openUrl = src.replace("/preview", "/view");
+            return (
+              <div key={"embed-" + src + idx} className="space-y-2">
+                <div className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_50px_hsl(var(--grad-2)/0.25)] bg-black/40">
+                  <iframe
+                    src={src}
+                    title={`${project.title} demo ${idx + 1}`}
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <a
+                  href={openUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-gradient hover:opacity-80 transition-opacity"
+                >
+                  ▶ Open video in new tab (full controls)
+                </a>
+              </div>
+            );
+          })}
           {(project.videos ?? []).map((src, idx) => (
             <div
               key={"vid-" + src + idx}
