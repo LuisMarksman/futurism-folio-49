@@ -12,6 +12,7 @@ export type Project = {
   image: string;
   images?: string[];
   videos?: string[];
+  embeds?: string[]; // external embed URLs (e.g. Google Drive /preview) rendered as iframes
   github?: string;
   inProgress?: boolean;
   partOf?: string;
@@ -44,6 +45,30 @@ const raw: Project[] = [
       "/images/eco-eats/backend-logistics-flow.svg",
     ],
     github: "https://github.com/karandev125/eco-eats-zero-hunger",
+  },
+  {
+    id: "p12",
+    year: 2026,
+    month: "April",
+    monthNum: 4,
+    title: "Voice Assistant — Vector Subsystem",
+    shortDesc: "Voice interface for Vector — Phase 1 running Xiaozhi AI on an ESP32-S3.",
+    description:
+      "The voice assistant is the conversational brain and control interface for Vector (Virtual Engine for Task Control and Operation Robotics) — letting it take spoken commands to run tasks, control home automation, drive the Hermes agent, answer questions, and direct the autonomous robot to go places and pick & place objects. Phase 1 (shown in the demo) runs the Xiaozhi AI voice-assistant firmware on-device on an ESP32-S3 for wake-word and voice interaction. Phase 2, currently in development, moves the pipeline to a cloud stack — Google Gemini as the LLM brain, Deepgram for speech-to-text and Google Cloud TTS for speech synthesis. Phase 3 will bring the entire STT → LLM → TTS loop fully in-house, running a custom fine-tuned model on my own server to drive home automation, the Hermes agent and the physical robot with no third-party APIs.",
+    problem:
+      "Vector needs a natural, low-latency voice interface to understand spoken commands and act on them — controlling smart-home devices, agents and the robot itself without touching a screen.",
+    features: [
+      "Phase 1: Xiaozhi AI voice assistant running on-device on ESP32-S3",
+      "Voice control for home automation, the Hermes agent and live Q&A",
+      "Commands the autonomous robot to navigate and pick & place objects",
+      "Phase 2 (in progress): Gemini LLM + Deepgram STT + Google Cloud TTS",
+      "Phase 3 (planned): fully local STT/LLM/TTS on a self-hosted fine-tuned model",
+    ],
+    tech: ["ESP32-S3", "Xiaozhi AI", "Google Gemini", "Deepgram STT", "Google Cloud TTS", "Home Automation"],
+    image: "/images/tesla-coil-2025.jpg",
+    embeds: ["https://drive.google.com/file/d/1_9hNVV2ijxJvtqPZi_YVeyw7rcprjbKl/preview"],
+    inProgress: true,
+    partOf: "Vector",
   },
   {
     id: "p2",
