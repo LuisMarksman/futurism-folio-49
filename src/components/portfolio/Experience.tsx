@@ -40,18 +40,18 @@ const experiences: {
     tech: ["Wearables", "Healthcare AI", "Product Design", "Prototyping"],
   },
   {
-    company: "Python Instructor",
+    company: "Adira Leadership Academy · U.S.-based ed-tech company",
     role: "Python Instructor",
-    duration: "February 2025",
+    duration: "Feb – Jun 2025",
     contributions: [
-      "Taught Python programming to beginners",
+      "Taught Python programming to beginners over a 5-month engagement",
       "Created lesson plans and explained programming fundamentals",
       "Mentored students through coding exercises and projects",
     ],
     tech: ["Python", "Teaching", "Mentorship"],
   },
   {
-    company: "AI News Verification System",
+    company: "Adira Leadership Academy · U.S.-based ed-tech company",
     role: "AI/ML Developer",
     duration: "December 2024",
     contributions: [
@@ -81,7 +81,7 @@ export const Experience = () => {
             <div className="space-y-8">
               {experiences.map((e, i) => (
                 <motion.div
-                  key={e.company}
+                  key={i}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
