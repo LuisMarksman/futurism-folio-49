@@ -14,7 +14,7 @@ const testimonials = [
     name: "Vikas Vishwakarma",
     role: "Founder & CEO, Zivika Labs Pvt Ltd",
     avatar: "/images/vikas_visvakarma.png",
-    text: "Working with Parth on our AI wearable that acts like a personal doctor was genuinely a great experience — one 'quick discussion' famously turned into a walk across almost the entire college campus. He's super energetic, creative, hardworking, and always passionate about building meaningful solutions. Excited to see all the amazing things he builds in the future.",
+    text: "Parth is super energetic, creative, hardworking, and always passionate about building meaningful solutions. Excited to see all the amazing things he builds in the future.",
   },
 ];
 
