@@ -19,6 +19,33 @@ export type Project = {
 
 const raw: Project[] = [
   {
+    id: "p11",
+    year: 2026,
+    month: "May",
+    monthNum: 5,
+    title: "Eco Eats — Perishable Food Rescue",
+    shortDesc: "Hardware-AI logistics platform that rescues perishable food before it spoils.",
+    description:
+      "Eco Eats is a hardware-AI logistics platform for perishable food rescue. Instead of just listing donated food, it uses live IoT telemetry — MQ gas and DHT temperature/humidity sensors — to score freshness and decide whether food can still be delivered safely and where it should go first, then optimizes dispatch routes to demand centers before the food becomes waste. The v1 intelligence layer is deterministic (Q10 spoilage logic + route/demand matching) rather than ML-based.",
+    problem:
+      "Traditional food-donation apps rely on static expiry dates and stop at inventory listing — they can't answer whether perishable food is still safe to deliver, or where it should be routed first.",
+    features: [
+      "IoT freshness scoring from MQ gas + DHT sensors (Q10 spoilage logic)",
+      "Deterministic hardware-AI dispatch engine (no ML in v1)",
+      "Route optimization via Nominatim, OSRM & OpenStreetMap",
+      "Priority dispatch queue with feasibility checks and claim locking",
+      "Donor & receiver dashboards plus a freshness simulation lab",
+    ],
+    tech: ["React 19", "Vite", "Leaflet", "Node.js", "Express 5", "MongoDB", "OSRM", "MQ Gas Sensor", "DHT Sensor"],
+    image: "/images/eco-eats/system-flow.svg",
+    images: [
+      "/images/eco-eats/system-flow.svg",
+      "/images/eco-eats/hardware-ai-pipeline.svg",
+      "/images/eco-eats/backend-logistics-flow.svg",
+    ],
+    github: "https://github.com/karandev125/eco-eats-zero-hunger",
+  },
+  {
     id: "p2",
     year: 2026,
     month: "April",
