@@ -115,6 +115,29 @@ const raw: Project[] = [
     partOf: "Vector",
   },
   {
+    id: "p13",
+    year: 2026,
+    month: "January",
+    monthNum: 1,
+    title: "Home Server — Self-Hosted Homelab",
+    shortDesc: "Raspberry Pi homelab running home automation, a local LLM, a personal NAS and the Hermes agent.",
+    description:
+      "A single-board home server built on a Raspberry Pi running Ubuntu Server, wired into the home network over Ethernet. A Docker stack turns it into a private, self-hosted homelab: Home Assistant for whole-home automation, Ollama running a small on-device LLM, Nextcloud as a personal NAS/drive, and Hermes — a custom agentic assistant that ties it all together. Everything runs on my own hardware with nothing in a third-party cloud; Hermes' own storage (memory, notes, documents and vector index) lives on the same disk that backs the NAS. This is the infrastructure that hosts the Hermes agent and home automation which Vector's voice assistant drives.",
+    problem:
+      "I wanted a private, always-on box I fully control — home automation, personal cloud storage and an AI assistant that can actually act on my house and files — without renting someone else's cloud or leaking personal data to external APIs.",
+    features: [
+      "Ubuntu Server on a Raspberry Pi, wired over Ethernet, Docker-based stack",
+      "Home Assistant for whole-home automation and device control",
+      "Local LLM via Ollama — fully on-device, nothing leaves the house",
+      "Nextcloud personal NAS/drive backed by USB storage",
+      "Hermes agent: tool-calling assistant for home control, file search, memory & reminders",
+      "Caddy reverse proxy with TLS, automated backups and health checks",
+    ],
+    tech: ["Raspberry Pi", "Ubuntu Server", "Docker", "Home Assistant", "Ollama", "Nextcloud", "Python", "Caddy"],
+    image: "/images/home-server-2026.jpg",
+    github: "https://github.com/LuisMarksman/Server",
+  },
+  {
     id: "p4",
     year: 2025,
     month: "April",
