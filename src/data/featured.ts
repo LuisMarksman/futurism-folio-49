@@ -93,10 +93,7 @@ export const featured: FeaturedProject[] = [
         title: "Voice Assistant",
         tag: "Interface",
         desc: "The conversational brain — spoken commands drive tasks, home automation and the robot.",
-        media: {
-          type: "embed",
-          src: "https://drive.google.com/file/d/1f3Zb9w7XPZgTTMHA1O9i3rG_Kdn9eAL0/preview",
-        },
+        media: { type: "video", src: "/videos/vector-voice-assistant.mp4" },
         tech: ["ESP32-S3", "Xiaozhi AI", "Gemini"],
         inProgress: true,
       },
