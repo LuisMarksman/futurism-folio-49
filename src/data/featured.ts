@@ -95,7 +95,7 @@ export const featured: FeaturedProject[] = [
         desc: "The conversational brain — spoken commands drive tasks, home automation and the robot.",
         media: {
           type: "embed",
-          src: "https://platform.twitter.com/embed/Tweet.html?id=2082747451946205678&theme=dark",
+          src: "https://drive.google.com/file/d/1f3Zb9w7XPZgTTMHA1O9i3rG_Kdn9eAL0/preview",
         },
         tech: ["ESP32-S3", "Xiaozhi AI", "Gemini"],
         inProgress: true,
