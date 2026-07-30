@@ -15,14 +15,32 @@ const socials = [
 export const Contact = () => {
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "d58b36eb-047e-455e-a2a6-e014331a83c9");
+    formData.append("subject", "New message from parthbuilds.tech");
+    formData.append("from_name", "parthbuilds.tech contact form");
+
     setSending(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast.success("Message sent! I'll get back to you soon.");
+        form.reset();
+      } else {
+        toast.error("Couldn't send — please email me directly at parthofficialacc@gmail.com.");
+      }
+    } catch {
+      toast.error("Network error — please email me directly at parthofficialacc@gmail.com.");
+    } finally {
       setSending(false);
-      toast.success("Message sent! I'll get back to you soon.");
-      (e.target as HTMLFormElement).reset();
-    }, 900);
+    }
   };
 
   return (
@@ -97,6 +115,15 @@ export const Contact = () => {
             onSubmit={onSubmit}
             className="lg:col-span-3 glass-strong rounded-3xl p-7 sm:p-9 space-y-5"
           >
+            {/* Honeypot — hidden from users, catches spam bots */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Name">
                 <input
