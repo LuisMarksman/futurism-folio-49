@@ -100,6 +100,14 @@ export const featured: FeaturedProject[] = [
         tech: ["ESP32-S3", "Xiaozhi AI", "Gemini"],
         inProgress: true,
       },
+      {
+        title: "Rover",
+        tag: "Mobility",
+        desc: "ESP32 4WD wheeled base — the mobile chassis that carries VECTOR's arm and eye, driven over WiFi from a browser.",
+        media: { type: "video", src: "/videos/vector-rover-prototype.mp4" },
+        tech: ["ESP32", "4WD Drive", "L298N", "WiFi Control"],
+        inProgress: true,
+      },
     ],
   },
   {
