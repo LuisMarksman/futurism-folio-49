@@ -8,7 +8,7 @@ import { SectionHeading } from "./ProjectsTimeline";
 const socials = [
   { icon: GithubIcon, label: "GitHub", href: "https://github.com/LuisMarksman" },
   { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/parth-gupta-082048253/" },
-  { icon: TwitterIcon, label: "Twitter / X", href: "https://twitter.com" },
+  { icon: TwitterIcon, label: "Twitter / X", href: "https://x.com/Parth_Gupta____" },
   { icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/parth_gupta___/" },
 ];
 
