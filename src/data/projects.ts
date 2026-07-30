@@ -66,7 +66,7 @@ const raw: Project[] = [
     ],
     tech: ["ESP32-S3", "Xiaozhi AI", "Google Gemini", "Deepgram STT", "Google Cloud TTS", "Home Automation"],
     image: "/images/tesla-coil-2025.jpg",
-    embeds: ["https://drive.google.com/file/d/1f3Zb9w7XPZgTTMHA1O9i3rG_Kdn9eAL0/preview"],
+    videos: ["/videos/vector-voice-assistant.mp4"],
     inProgress: true,
     partOf: "Vector",
   },
