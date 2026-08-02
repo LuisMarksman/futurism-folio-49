@@ -113,7 +113,9 @@ export const Hero = () => {
               <ArrowRight className="size-4" /> View Projects
             </a>
             <a
-              href="#"
+              href="/Parth_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3.5 text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors"
             >
               <Download className="size-4" /> Resume
