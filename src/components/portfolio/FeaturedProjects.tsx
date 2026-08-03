@@ -18,7 +18,7 @@ export const FeaturedProjects = () => {
               Flagship <span className="text-gradient">Projects</span>
             </>
           }
-          subtitle="The two builds I'd point to first — explore them here, then dive into the full 2017 → 2026 timeline below."
+          subtitle="The builds I'd point to first — explore them here, then dive into the full 2017 → 2026 timeline below."
         />
 
         <div className="mt-16 sm:mt-20 space-y-14 lg:space-y-24">
@@ -202,12 +202,34 @@ function DiagramGallery({ media }: { media: FeaturedMedia[] }) {
         transition={{ duration: 0.3 }}
         className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 bg-[#0d1117]"
       >
-        <img
-          src={current.src}
-          alt={current.label ?? "Eco Eats diagram"}
-          loading="lazy"
-          className="w-full h-auto max-h-[440px] object-contain"
-        />
+        {current.type === "video" ? (
+          <video
+            src={current.src}
+            className="w-full h-auto max-h-[440px] object-contain bg-black"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            aria-label={current.label}
+          />
+        ) : current.type === "embed" ? (
+          <iframe
+            src={current.src}
+            title={current.label ?? "Project demo"}
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            loading="lazy"
+            className="w-full aspect-video"
+          />
+        ) : (
+          <img
+            src={current.src}
+            alt={current.label ?? "Project diagram"}
+            loading="lazy"
+            className="w-full h-auto max-h-[440px] object-contain"
+          />
+        )}
       </motion.div>
       <div className="mt-3 flex flex-wrap gap-2">
         {media.map((m, i) => (
