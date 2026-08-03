@@ -20,6 +20,33 @@ export type Project = {
 
 const raw: Project[] = [
   {
+    id: "p-abb",
+    year: 2026,
+    month: "August",
+    monthNum: 8,
+    title: "Industrial Robotics — ABB IRB 1090 & RobotStudio",
+    shortDesc: "Programming & operating a 6-axis ABB industrial robot — in RobotStudio and on the real arm.",
+    description:
+      "A self-directed dive into industrial robotics: programming and operating ABB's 6-axis IRB 1090 both virtually in ABB RobotStudio and hands-on in a physical robot training cell. It covers offline programming and 3D simulation, jogging the arm through the FlexPendant, and running pick-and-place routines that move colored workpieces and trace paths on a worktable — taking a program from a RobotStudio model all the way to the real robot.",
+    problem:
+      "Industrial robots like the ABB IRB 1090 are programmed and operated very differently from hobby/embedded robotics — I wanted hands-on fluency with real ABB tooling (RobotStudio + FlexPendant) and the offline-to-real workflow.",
+    features: [
+      "Offline programming & 3D simulation in ABB RobotStudio",
+      "Jogging the 6-axis arm via the FlexPendant (joint & linear modes)",
+      "Pick-and-place routines with a gripper on real workpieces",
+      "Path / shape tracing and coordinated multi-axis motion",
+      "Full workflow from virtual RobotStudio model to the physical IRB 1090",
+    ],
+    tech: ["ABB RobotStudio", "ABB IRB 1090", "RAPID", "6-Axis Robot", "FlexPendant", "Pick & Place"],
+    image: "/images/tesla-coil-2025.jpg",
+    videos: [
+      "/videos/abb-irb1090-training-cell.mp4",
+      "/videos/abb-irb1090-demo.mp4",
+      "/videos/abb-robotstudio-jog.mp4",
+      "/videos/abb-robotstudio-sim.mp4",
+    ],
+  },
+  {
     id: "p11",
     year: 2026,
     month: "May",

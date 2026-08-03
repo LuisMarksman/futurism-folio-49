@@ -142,4 +142,29 @@ export const featured: FeaturedProject[] = [
       { type: "image", src: "/images/eco-eats/backend-logistics-flow.svg", label: "Backend & Logistics" },
     ],
   },
+  {
+    id: "abb-irb1090",
+    index: "03",
+    name: "ABB IRB 1090",
+    expansion: "Industrial Robot Programming — RobotStudio + Real Robot",
+    tagline:
+      "Programming and operating a 6-axis ABB industrial robot — in RobotStudio simulation and hands-on in a robot training cell.",
+    description:
+      "A self-directed dive into industrial robotics on ABB's 6-axis IRB 1090. I programmed and simulated the arm offline in ABB RobotStudio, jogged it through the FlexPendant, and ran pick-and-place routines on the real robot — moving colored workpieces and tracing paths on a worktable, taking a program from a virtual model all the way to the physical machine.",
+    accent: "purple",
+    highlights: [
+      "Offline programming & 3D simulation in ABB RobotStudio",
+      "Jogging the 6-axis arm via the FlexPendant (joint & linear modes)",
+      "Pick-and-place with a gripper on real workpieces",
+      "Full workflow from virtual RobotStudio model to the physical IRB 1090",
+    ],
+    tech: ["ABB RobotStudio", "ABB IRB 1090", "RAPID", "6-Axis Robot", "FlexPendant", "Pick & Place"],
+    timelineHref: "#projects",
+    gallery: [
+      { type: "video", src: "/videos/abb-irb1090-training-cell.mp4", label: "Robot Training Cell" },
+      { type: "video", src: "/videos/abb-irb1090-demo.mp4", label: "IRB 1090 Pick & Place" },
+      { type: "video", src: "/videos/abb-robotstudio-jog.mp4", label: "RobotStudio — Jog" },
+      { type: "video", src: "/videos/abb-robotstudio-sim.mp4", label: "RobotStudio — Sim" },
+    ],
+  },
 ];
